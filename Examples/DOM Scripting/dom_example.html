@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive DOM Examples</title>
+    <style>
+        /* CSS rule for highlighting */
+        .highlight {
+            color: red;
+        }
+
+        /* CSS rule for images */
+        img {
+            max-width: 25%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Examples with Interactive Buttons -->
+
+    <div id="contentDiv">Original content</div>
+    <button onclick="changeInnerHTML()">Change Inner HTML</button>
+
+    <img id="myImage" src="estg.png" alt="Original Image">
+    <button onclick="changeImage()">Change Image</button>
+
+    <p id="styledParagraph">This is a paragraph.</p>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <a id="myLink" href="#">Original Link</a>
+    <button onclick="changeLink()">Change Link</button>
+
+    <!-- Additional Examples with Event Interactions -->
+
+    <p id="onMouseOverParagraph" onmouseover="highlightParagraph()">Hover over me!</p>
+
+    <div id="onLoadExample" onload="onLoadExample()">This will trigger onload</div>
+
+    <div id="onUnloadExample" onunload="onUnloadExample()">This will trigger onunload</div>
+
+    <button onmousedown="buttonMouseDown()">Mouse Down (on console)</button>
+    <button onmouseup="buttonMouseUp()">Mouse Up (on console)</button>
+
+    <script>
+        // JavaScript functions for button click events
+
+        function changeInnerHTML() {
+            var contentDiv = document.getElementById("contentDiv");
+            contentDiv.innerHTML = "New content with <strong>HTML</strong>!";
+        }
+
+        function changeImage() {
+            var myImage = document.getElementById("myImage");
+            myImage.src = "ecgm.png";
+            myImage.alt = "New Image";
+        }
+
+        function changeStyle() {
+            var styledParagraph = document.getElementById("styledParagraph");
+            styledParagraph.style.color = "blue";
+            styledParagraph.style.fontSize = "18px";
+            styledParagraph.style.marginTop = "10px";
+        }
+
+        function changeLink() {
+            var myLink = document.getElementById("myLink");
+            myLink.setAttribute("href", "newPage.html");
+        }
+
+        // Additional JavaScript functions for event interactions
+
+        function highlightParagraph() {
+            var onMouseOverParagraph = document.getElementById("onMouseOverParagraph");
+            onMouseOverParagraph.classList.add("highlight");
+        }
+
+        function onLoadExample() {
+            console.log("Page has been loaded!");
+        }
+
+        function onUnloadExample() {
+            console.log("Page is about to unload!");
+        }
+
+        function buttonMouseDown() {
+            console.log("Mouse button is down!");
+        }
+
+        function buttonMouseUp() {
+            console.log("Mouse button is up!");
+        }
+    </script>
+</body>
+</html>

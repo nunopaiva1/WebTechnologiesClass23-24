@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Example</title>
+</head>
+<body>
+
+    <!-- BOM Explanation and Examples -->
+
+    <h2>Window Object</h2>
+    <p>The <strong>window</strong> object represents the browser window.</p>
+    <button onclick="openNewWindow()">Open New Window</button>
+
+    <h2>Screen Object</h2>
+    <p>The <strong>screen</strong> object contains information about the user's screen.</p>
+    <p>Width: <span id="screenWidth"></span> pixels</p>
+    <p>Height: <span id="screenHeight"></span> pixels</p>
+    <script>
+        
+        // Screen Object Example
+        document.getElementById("screenWidth").textContent = screen.width;
+        document.getElementById("screenHeight").textContent = screen.height;
+    </script>
+
+    <h2>Location Object</h2>
+    <p>The <strong>location</strong> object allows navigation between pages.</p>
+    <button onclick="goToGoogle()">Go to Google</button>
+
+    <h2>History Object</h2>
+    <p>The <strong>history</strong> object represents the browser's history for the current page.</p>
+    <button onclick="goBack()">Go Back</button>
+
+    <h2>Navigator Object</h2>
+    <p>The <strong>navigator</strong> object represents the state and identity of the user agent (browser).</p>
+    <p>User Agent: <span id="userAgent"></span></p>
+    <script>
+
+        // Navigator Object Example
+        document.getElementById("userAgent").textContent = navigator.userAgent;
+    </script>
+
+    <h2>Timing Object</h2>
+    <p>The <strong>timing</strong> object provides functions related to time, such as measuring page load times.</p>
+    <p>Page Load Time: <span id="loadTime"></span> milliseconds</p>
+    <script>
+
+        // Timing Object Example
+        document.getElementById("loadTime").textContent = performance.timing.loadEventEnd - performance.timing.navigationStart;
+    </script>
+
+    <h2>Popup Alert</h2>
+    <button onclick="showAlert()">Show Alert</button>
+
+    <script>
+        function openNewWindow() {
+            window.open("https://www.example.com", "_blank");
+        }
+
+        function goToGoogle() {
+            location.href = "https://www.google.com";
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function showAlert() {
+            alert("This is a popup alert!");
+        }
+    </script>
+
+    <h2>Cookies</h2>
+    <p>The <strong>document.cookie</strong> property is used to manage user cookies.</p>
+
+    <!-- Buttons for cookie operations -->
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="showCookie()">Show Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <script>
+        // JavaScript functions for BOM examples
+
+        function setCookie() {
+            localStorage.setItem("exampleCookie", "Hello, BOM!");
+            alert("Cookie set successfully!");
+        }
+
+        function showCookie() {
+            var cookieValue = localStorage.getItem("exampleCookie");
+            alert("Cookie Value: " + cookieValue);
+        }
+
+        function deleteCookie() {
+            localStorage.removeItem("exampleCookie");
+            alert("Cookie deleted successfully!");
+        }
+    </script>
+
+</body>
+</html>
