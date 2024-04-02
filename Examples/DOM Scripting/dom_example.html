@@ -53,8 +53,20 @@
 
         function changeImage() {
             var myImage = document.getElementById("myImage");
-            myImage.src = "ecgm.png";
-            myImage.alt = "New Image";
+            var currentSrc = myImage.src;
+
+            // Define the two image sources
+            var image1 = "estg.png";
+            var image2 = "ecgm.png";
+
+            // Toggle between the images
+            if (currentSrc.endsWith(image1)) {
+                myImage.src = image2;
+                //myImage.alt = "New Image";
+            } else {
+                myImage.src = image1;
+                //myImage.alt = "Original Image";
+            }
         }
 
         function changeStyle() {

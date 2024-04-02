@@ -1,0 +1,9 @@
+// Criar um titulo: Euro Milhões
+// Criar tabela com 3 colunas
+// Criar dois botões, um para gerar chave outro para limpar tabela
+
+
+// função para gerar Números e Estrelas, num objecto em que cada um terá o seu array respectivamente
+// função gerarNumeros com os parâmetros, numero mínimo, numero máximo e quantos números queremos
+// função para ordenar números num dado array
+// função para adicionar a chave gerada, a chave ordenada, e as estrelas na tabela
