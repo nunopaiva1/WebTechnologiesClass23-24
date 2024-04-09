@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+    
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <h1>AJAX Example</h1>
+    </div>
+
+    <div id="data-container">
+        <!-- Data will be displayed here -->
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            
+            // Fetch data when the page loads
+            fetchData();
+
+            // Function to fetch data from API
+            function fetchData() {
+                
+                // Make AJAX request using jQuery
+                $.ajax({
+                    url: 'https://jsonplaceholder.typicode.com/posts',
+                    method: 'GET',
+                    
+                    success: function(data) {
+                        // On successful response, update UI
+                        displayData(data);
+                        console.log("Successfully fetched data: ", data);
+                    },
+                    error: function(xhr, status, error) {
+                        // On error, log the error
+                        console.error(status + ': ' + error);
+                    }
+                });
+            }
+
+            // Function to display data on the webpage
+            function displayData(data) {
+                var container = $('#data-container');
+
+                //container.empty() and container.append() are jQuery methods used to manipulate the DOM 
+                //by clearing existing content and appending new content to the selected element.
+
+                // Clear existing content
+                container.empty();
+
+                // Iterate over fetched data and display each item
+                data.forEach(function(item) {
+                    container.append('<div><h3>' + item.title + '</h3><p>' + item.body + '</p></div>');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+// flickr api key: https://www.flickr.com/services/api/misc.api_keys.html || 260cfd21365b281507d74790ad583d32
+// Weather api key: https://home.openweathermap.org/users/sign_in || a9e49b305a5d14cc0790dbf507251ca1
